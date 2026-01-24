@@ -1,0 +1,15 @@
+# RetailOps Insight Engine - Python Dependencies
+
+# Core Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+
+# Web Server
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# Utilities
+python-dateutil>=2.8.0
