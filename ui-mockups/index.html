@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Operations - UI Mockups</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mockup-container">
+        <h1>Retail Operations Anomaly Detection - UI Mockups</h1>
+        <nav class="mockup-nav">
+            <a href="#dashboard" class="nav-link active">Dashboard</a>
+            <a href="#anomaly-detail" class="nav-link">Anomaly Detail</a>
+            <a href="#kpi-dashboard" class="nav-link">KPI Dashboard</a>
+            <a href="#store-performance" class="nav-link">Store Performance</a>
+        </nav>
+
+        <!-- Anomaly Overview Dashboard -->
+        <section id="dashboard" class="mockup-section active">
+            <div class="mockup-header">
+                <h2>Anomaly Overview Dashboard</h2>
+                <p>Central hub for monitoring all detected anomalies</p>
+            </div>
+
+            <div class="dashboard-layout">
+                <!-- Header -->
+                <header class="app-header">
+                    <div class="logo">RetailOps</div>
+                    <div class="header-actions">
+                        <input type="search" placeholder="Search anomalies..." class="search-box">
+                        <button class="icon-btn">🔔</button>
+                        <button class="icon-btn">👤</button>
+                    </div>
+                </header>
+
+                <div class="main-content">
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item active">📊 Dashboard</a>
+                            <a href="#" class="nav-item">📈 KPI Performance</a>
+                            <a href="#" class="nav-item">🏪 Store Performance</a>
+                            <a href="#" class="nav-item">🔍 Root Cause Analysis</a>
+                            <a href="#" class="nav-item">⚙️ Settings</a>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Dashboard Content -->
+                    <main class="dashboard-content">
+                        <!-- Summary Cards -->
+                        <div class="summary-cards">
+                            <div class="summary-card critical">
+                                <div class="card-icon">🚨</div>
+                                <div class="card-content">
+                                    <div class="card-label">Critical</div>
+                                    <div class="card-value">5</div>
+                                    <div class="card-change">+2 from last week</div>
+                                </div>
+                            </div>
+                            <div class="summary-card high">
+                                <div class="card-icon">⚠️</div>
+                                <div class="card-content">
+                                    <div class="card-label">High</div>
+                                    <div class="card-value">12</div>
+                                    <div class="card-change">-3 from last week</div>
+                                </div>
+                            </div>
+                            <div class="summary-card medium">
+                                <div class="card-icon">📊</div>
+                                <div class="card-content">
+                                    <div class="card-label">Medium</div>
+                                    <div class="card-value">28</div>
+                                    <div class="card-change">+5 from last week</div>
+                                </div>
+                            </div>
+                            <div class="summary-card low">
+                                <div class="card-icon">ℹ️</div>
+                                <div class="card-content">
+                                    <div class="card-label">Low</div>
+                                    <div class="card-value">45</div>
+                                    <div class="card-change">+8 from last week</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financial Impact Card -->
+                        <div class="impact-card">
+                            <div class="impact-header">
+                                <h3>Total Financial Impact</h3>
+                                <select class="period-selector">
+                                    <option>Last 30 days</option>
+                                    <option>Last 7 days</option>
+                                    <option>Last 90 days</option>
+                                </select>
+                            </div>
+                            <div class="impact-value">$125,430.50</div>
+                            <div class="impact-breakdown">
+                                <span>Avg per anomaly: $1,393.67</span>
+                                <span>•</span>
+                                <span>90 total anomalies</span>
+                            </div>
+                        </div>
+
+                        <!-- Filters -->
+                        <div class="filters-panel">
+                            <div class="filter-group">
+                                <label>Date Range</label>
+                                <input type="date" value="2023-01-01">
+                                <span>to</span>
+                                <input type="date" value="2023-12-31">
+                            </div>
+                            <div class="filter-group">
+                                <label>Severity</label>
+                                <select multiple class="multi-select">
+                                    <option selected>Critical</option>
+                                    <option selected>High</option>
+                                    <option selected>Medium</option>
+                                    <option selected>Low</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Metric</label>
+                                <select multiple class="multi-select">
+                                    <option selected>Total Revenue</option>
+                                    <option>Gross Margin</option>
+                                    <option>Stockout Rate</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Store</label>
+                                <select multiple class="multi-select">
+                                    <option>All Stores</option>
+                                </select>
+                            </div>
+                            <button class="btn-primary">Apply Filters</button>
+                            <button class="btn-secondary">Reset</button>
+                            <button class="btn-secondary">Export CSV</button>
+                        </div>
+
+                        <!-- Recent Anomalies Timeline -->
+                        <div class="chart-card">
+                            <h3>Recent Anomalies Timeline</h3>
+                            <div class="chart-placeholder timeline-chart">
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="legend-color critical"></span> Critical</span>
+                                    <span class="legend-item"><span class="legend-color high"></span> High</span>
+                                    <span class="legend-item"><span class="legend-color medium"></span> Medium</span>
+                                    <span class="legend-item"><span class="legend-color low"></span> Low</span>
+                                </div>
+                                <div class="chart-visualization">
+                                    <svg viewBox="0 0 800 200" class="timeline-svg">
+                                        <!-- Timeline bars representing anomalies over time -->
+                                        <rect x="50" y="150" width="20" height="50" fill="#F44336" opacity="0.8"/>
+                                        <rect x="100" y="130" width="20" height="70" fill="#FF9800" opacity="0.8"/>
+                                        <rect x="150" y="140" width="20" height="60" fill="#F44336" opacity="0.8"/>
+                                        <rect x="200" y="100" width="20" height="100" fill="#FF9800" opacity="0.8"/>
+                                        <rect x="250" y="120" width="20" height="80" fill="#FBC02D" opacity="0.8"/>
+                                        <rect x="300" y="80" width="20" height="120" fill="#F44336" opacity="0.8"/>
+                                        <rect x="350" y="110" width="20" height="90" fill="#FBC02D" opacity="0.8"/>
+                                        <rect x="400" y="90" width="20" height="110" fill="#2196F3" opacity="0.8"/>
+                                        <rect x="450" y="130" width="20" height="70" fill="#FBC02D" opacity="0.8"/>
+                                        <rect x="500" y="100" width="20" height="100" fill="#2196F3" opacity="0.8"/>
+                                        <line x1="0" y1="200" x2="800" y2="200" stroke="#ccc" stroke-width="2"/>
+                                        <text x="50" y="220" font-size="12" fill="#666">Jan</text>
+                                        <text x="200" y="220" font-size="12" fill="#666">Mar</text>
+                                        <text x="400" y="220" font-size="12" fill="#666">Jun</text>
+                                        <text x="600" y="220" font-size="12" fill="#666">Sep</text>
+                                        <text x="750" y="220" font-size="12" fill="#666">Dec</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Anomalies Table -->
+                        <div class="table-card">
+                            <div class="table-header">
+                                <h3>Anomalies</h3>
+                                <div class="table-actions">
+                                    <span class="table-info">Showing 1-50 of 90</span>
+                                    <button class="btn-icon">⬇️</button>
+                                    <button class="btn-icon">⚙️</button>
+                                </div>
+                            </div>
+                            <table class="anomalies-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox">
+                                            Severity
+                                        </th>
+                                        <th>Metric</th>
+                                        <th>Store</th>
+                                        <th>Category</th>
+                                        <th>Start Date</th>
+                                        <th>Duration</th>
+                                        <th>Direction</th>
+                                        <th>Max Impact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="row-critical">
+                                        <td>
+                                            <input type="checkbox">
+                                            <span class="badge critical">Critical</span>
+                                        </td>
+                                        <td>
+                                            <span class="metric-icon">💰</span>
+                                            Total Revenue
+                                        </td>
+                                        <td>Store 3</td>
+                                        <td>Category_1</td>
+                                        <td>2023-06-15</td>
+                                        <td>7 days</td>
+                                        <td><span class="direction low">↓ Low</span></td>
+                                        <td class="impact">$5,234.50</td>
+                                        <td><button class="btn-link">View Details</button></td>
+                                    </tr>
+                                    <tr class="row-high">
+                                        <td>
+                                            <input type="checkbox">
+                                            <span class="badge high">High</span>
+                                        </td>
+                                        <td>
+                                            <span class="metric-icon">📊</span>
+                                            Gross Margin
+                                        </td>
+                                        <td>Store 7</td>
+                                        <td>Category_3</td>
+                                        <td>2023-07-02</td>
+                                        <td>5 days</td>
+                                        <td><span class="direction low">↓ Low</span></td>
+                                        <td class="impact">$2,890.20</td>
+                                        <td><button class="btn-link">View Details</button></td>
+                                    </tr>
+                                    <tr class="row-high">
+                                        <td>
+                                            <input type="checkbox">
+                                            <span class="badge high">High</span>
+                                        </td>
+                                        <td>
+                                            <span class="metric-icon">📦</span>
+                                            Stockout Rate
+                                        </td>
+                                        <td>Store 2</td>
+                                        <td>Category_2</td>
+                                        <td>2023-08-10</td>
+                                        <td>4 days</td>
+                                        <td><span class="direction high">↑ High</span></td>
+                                        <td class="impact">$1,567.80</td>
+                                        <td><button class="btn-link">View Details</button></td>
+                                    </tr>
+                                    <tr class="row-medium">
+                                        <td>
+                                            <input type="checkbox">
+                                            <span class="badge medium">Medium</span>
+                                        </td>
+                                        <td>
+                                            <span class="metric-icon">💰</span>
+                                            Total Revenue
+                                        </td>
+                                        <td>Store 5</td>
+                                        <td>Category_4</td>
+                                        <td>2023-09-15</td>
+                                        <td>3 days</td>
+                                        <td><span class="direction low">↓ Low</span></td>
+                                        <td class="impact">$890.40</td>
+                                        <td><button class="btn-link">View Details</button></td>
+                                    </tr>
+                                    <tr class="row-low">
+                                        <td>
+                                            <input type="checkbox">
+                                            <span class="badge low">Low</span>
+                                        </td>
+                                        <td>
+                                            <span class="metric-icon">📊</span>
+                                            Gross Margin
+                                        </td>
+                                        <td>Store 1</td>
+                                        <td>Category_1</td>
+                                        <td>2023-10-20</td>
+                                        <td>2 days</td>
+                                        <td><span class="direction high">↑ High</span></td>
+                                        <td class="impact">$234.10</td>
+                                        <td><button class="btn-link">View Details</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-pagination">
+                                <button class="btn-secondary">Previous</button>
+                                <span class="page-numbers">
+                                    <button class="page-btn active">1</button>
+                                    <button class="page-btn">2</button>
+                                    <button class="page-btn">3</button>
+                                </span>
+                                <button class="btn-secondary">Next</button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anomaly Detail View -->
+        <section id="anomaly-detail" class="mockup-section">
+            <div class="mockup-header">
+                <h2>Anomaly Detail View</h2>
+                <p>Deep dive into a specific anomaly with root cause analysis</p>
+            </div>
+
+            <div class="dashboard-layout">
+                <header class="app-header">
+                    <div class="logo">RetailOps</div>
+                    <div class="header-actions">
+                        <input type="search" placeholder="Search..." class="search-box">
+                        <button class="icon-btn">🔔</button>
+                        <button class="icon-btn">👤</button>
+                    </div>
+                </header>
+
+                <div class="main-content">
+                    <aside class="sidebar">
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item">📊 Dashboard</a>
+                            <a href="#" class="nav-item">📈 KPI Performance</a>
+                            <a href="#" class="nav-item">🏪 Store Performance</a>
+                            <a href="#" class="nav-item">🔍 Root Cause Analysis</a>
+                            <a href="#" class="nav-item">⚙️ Settings</a>
+                        </nav>
+                    </aside>
+
+                    <main class="detail-content">
+                        <div class="breadcrumb">
+                            <a href="#">← Back to Anomalies</a>
+                        </div>
+
+                        <!-- Anomaly Header -->
+                        <div class="anomaly-header-card">
+                            <div class="anomaly-badge critical">Critical</div>
+                            <div class="anomaly-info">
+                                <h1>Total Revenue Anomaly</h1>
+                                <div class="anomaly-meta">
+                                    <span><strong>Store:</strong> Store 3</span>
+                                    <span>•</span>
+                                    <span><strong>Category:</strong> Category_1</span>
+                                    <span>•</span>
+                                    <span><strong>Period:</strong> Jun 15 - Jun 22, 2023 (7 days)</span>
+                                </div>
+                                <div class="anomaly-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Direction</span>
+                                        <span class="stat-value direction low">↓ Low</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Max Impact</span>
+                                        <span class="stat-value impact">$5,234.50</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Avg Impact</span>
+                                        <span class="stat-value">$747.79/day</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Time Series Chart -->
+                        <div class="chart-card large">
+                            <div class="chart-header">
+                                <h3>KPI Time Series</h3>
+                                <div class="chart-controls">
+                                    <button class="btn-icon">📥 Download</button>
+                                    <button class="btn-icon">🔍 Zoom</button>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder timeseries-chart">
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="legend-line actual"></span> Actual</span>
+                                    <span class="legend-item"><span class="legend-line expected"></span> Expected</span>
+                                    <span class="legend-item"><span class="legend-line bounds"></span> Bounds</span>
+                                    <span class="legend-item"><span class="legend-area anomaly"></span> Anomaly Period</span>
+                                </div>
+                                <div class="chart-visualization">
+                                    <svg viewBox="0 0 900 400" class="timeseries-svg">
+                                        <!-- Grid lines -->
+                                        <line x1="50" y1="50" x2="50" y2="350" stroke="#e0e0e0" stroke-width="1"/>
+                                        <line x1="50" y1="350" x2="850" y2="350" stroke="#e0e0e0" stroke-width="1"/>
+                                        
+                                        <!-- Expected line (dashed gray) -->
+                                        <polyline points="50,200 150,195 250,190 350,185 450,180 550,185 650,190 750,195 850,200" 
+                                                  fill="none" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="5,5"/>
+                                        
+                                        <!-- Upper bound (dotted) -->
+                                        <polyline points="50,150 150,145 250,140 350,135 450,130 550,135 650,140 750,145 850,150" 
+                                                  fill="none" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="3,3"/>
+                                        
+                                        <!-- Lower bound (dotted) -->
+                                        <polyline points="50,250 150,245 250,240 350,235 450,230 550,235 650,240 750,245 850,250" 
+                                                  fill="none" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="3,3"/>
+                                        
+                                        <!-- Actual line (solid blue) -->
+                                        <polyline points="50,200 150,195 250,190 350,185 450,280 500,290 550,285 600,280 650,275 700,270 750,265 800,260 850,255" 
+                                                  fill="none" stroke="#2196F3" stroke-width="3"/>
+                                        
+                                        <!-- Anomaly period highlight (red shaded area) -->
+                                        <rect x="450" y="50" width="400" height="300" fill="#F44336" opacity="0.1"/>
+                                        
+                                        <!-- Anomaly period label -->
+                                        <text x="650" y="40" font-size="14" fill="#F44336" font-weight="bold">Anomaly Period</text>
+                                        
+                                        <!-- Axis labels -->
+                                        <text x="25" y="200" font-size="12" fill="#666">$0</text>
+                                        <text x="25" y="100" font-size="12" fill="#666">$50k</text>
+                                        <text x="25" y="300" font-size="12" fill="#666">-$50k</text>
+                                        <text x="50" y="370" font-size="12" fill="#666">Jun 1</text>
+                                        <text x="450" y="370" font-size="12" fill="#666">Jun 15</text>
+                                        <text x="650" y="370" font-size="12" fill="#666">Jun 22</text>
+                                        <text x="850" y="370" font-size="12" fill="#666">Jul 1</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financial Impact Breakdown -->
+                        <div class="impact-breakdown-card">
+                            <h3>Financial Impact Breakdown</h3>
+                            <div class="impact-items">
+                                <div class="impact-item">
+                                    <div class="impact-label">Revenue Impact</div>
+                                    <div class="impact-amount negative">-$3,200.00</div>
+                                    <div class="impact-description">Difference from expected revenue</div>
+                                </div>
+                                <div class="impact-item">
+                                    <div class="impact-label">Margin Impact</div>
+                                    <div class="impact-amount negative">-$1,500.00</div>
+                                    <div class="impact-description">Margin deviation × revenue</div>
+                                </div>
+                                <div class="impact-item">
+                                    <div class="impact-label">Stockout Impact</div>
+                                    <div class="impact-amount negative">-$534.50</div>
+                                    <div class="impact-description">Estimated lost revenue</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Root Cause Drivers -->
+                        <div class="root-cause-card">
+                            <h3>Root Cause Drivers</h3>
+                            <p class="subtitle">Ranked by importance score</p>
+                            <div class="drivers-list">
+                                <div class="driver-item">
+                                    <div class="driver-rank">1</div>
+                                    <div class="driver-content">
+                                        <div class="driver-header">
+                                            <span class="driver-name">discount_rate</span>
+                                            <span class="driver-score">Importance: 0.342</span>
+                                        </div>
+                                        <div class="driver-change positive">
+                                            <span class="change-icon">↑</span>
+                                            <span class="change-value">+25.3%</span>
+                                            <span class="change-desc">Increased from baseline period</span>
+                                        </div>
+                                        <div class="driver-bar">
+                                            <div class="driver-bar-fill" style="width: 34.2%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="driver-item">
+                                    <div class="driver-rank">2</div>
+                                    <div class="driver-content">
+                                        <div class="driver-header">
+                                            <span class="driver-name">stock_on_hand</span>
+                                            <span class="driver-score">Importance: 0.198</span>
+                                        </div>
+                                        <div class="driver-change negative">
+                                            <span class="change-icon">↓</span>
+                                            <span class="change-value">-45.2%</span>
+                                            <span class="change-desc">Decreased from baseline period</span>
+                                        </div>
+                                        <div class="driver-bar">
+                                            <div class="driver-bar-fill" style="width: 19.8%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="driver-item">
+                                    <div class="driver-rank">3</div>
+                                    <div class="driver-content">
+                                        <div class="driver-header">
+                                            <span class="driver-name">supplier_id</span>
+                                            <span class="driver-score">Importance: 0.156</span>
+                                        </div>
+                                        <div class="driver-change changed">
+                                            <span class="change-icon">↔</span>
+                                            <span class="change-value">Changed</span>
+                                            <span class="change-desc">Supplier changed during anomaly period</span>
+                                        </div>
+                                        <div class="driver-bar">
+                                            <div class="driver-bar-fill" style="width: 15.6%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="driver-item">
+                                    <div class="driver-rank">4</div>
+                                    <div class="driver-content">
+                                        <div class="driver-header">
+                                            <span class="driver-name">avg_price</span>
+                                            <span class="driver-score">Importance: 0.124</span>
+                                        </div>
+                                        <div class="driver-change negative">
+                                            <span class="change-icon">↓</span>
+                                            <span class="change-value">-12.8%</span>
+                                            <span class="change-desc">Average price decreased</span>
+                                        </div>
+                                        <div class="driver-bar">
+                                            <div class="driver-bar-fill" style="width: 12.4%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Anomalies -->
+                        <div class="related-anomalies-card">
+                            <h3>Related Anomalies</h3>
+                            <table class="related-table">
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Metric</th>
+                                        <th>Period</th>
+                                        <th>Impact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge high">High</span></td>
+                                        <td>Total Revenue</td>
+                                        <td>Jun 8 - Jun 12</td>
+                                        <td>$1,890.20</td>
+                                        <td><button class="btn-link">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge medium">Medium</span></td>
+                                        <td>Gross Margin</td>
+                                        <td>Jun 25 - Jun 27</td>
+                                        <td>$567.40</td>
+                                        <td><button class="btn-link">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Performance Dashboard -->
+        <section id="kpi-dashboard" class="mockup-section">
+            <div class="mockup-header">
+                <h2>KPI Performance Dashboard</h2>
+                <p>Monitor KPIs across stores and categories with baseline visualization</p>
+            </div>
+
+            <div class="dashboard-layout">
+                <header class="app-header">
+                    <div class="logo">RetailOps</div>
+                    <div class="header-actions">
+                        <input type="search" placeholder="Search..." class="search-box">
+                        <button class="icon-btn">🔔</button>
+                        <button class="icon-btn">👤</button>
+                    </div>
+                </header>
+
+                <div class="main-content">
+                    <aside class="sidebar">
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item">📊 Dashboard</a>
+                            <a href="#" class="nav-item active">📈 KPI Performance</a>
+                            <a href="#" class="nav-item">🏪 Store Performance</a>
+                            <a href="#" class="nav-item">🔍 Root Cause Analysis</a>
+                            <a href="#" class="nav-item">⚙️ Settings</a>
+                        </nav>
+                    </aside>
+
+                    <main class="dashboard-content">
+                        <!-- Filters -->
+                        <div class="filters-panel">
+                            <div class="filter-group">
+                                <label>Date Range</label>
+                                <input type="date" value="2023-01-01">
+                                <span>to</span>
+                                <input type="date" value="2023-12-31">
+                            </div>
+                            <div class="filter-group">
+                                <label>Store</label>
+                                <select multiple class="multi-select">
+                                    <option selected>All Stores</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Category</label>
+                                <select multiple class="multi-select">
+                                    <option selected>All Categories</option>
+                                </select>
+                            </div>
+                            <button class="btn-primary">Apply</button>
+                            <button class="btn-secondary">Reset</button>
+                        </div>
+
+                        <!-- KPI Summary Cards -->
+                        <div class="kpi-summary-cards">
+                            <div class="kpi-card">
+                                <div class="kpi-header">
+                                    <span class="kpi-icon">💰</span>
+                                    <span class="kpi-name">Total Revenue</span>
+                                </div>
+                                <div class="kpi-value">$2,456,789.50</div>
+                                <div class="kpi-details">
+                                    <span>Avg: $6,731.20/day</span>
+                                    <span class="kpi-trend positive">↑ +5.2%</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="kpi-header">
+                                    <span class="kpi-icon">📊</span>
+                                    <span class="kpi-name">Gross Margin</span>
+                                </div>
+                                <div class="kpi-value">32.4%</div>
+                                <div class="kpi-details">
+                                    <span>Target: 35%</span>
+                                    <span class="kpi-trend negative">↓ -2.1%</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="kpi-header">
+                                    <span class="kpi-icon">📦</span>
+                                    <span class="kpi-name">Stockout Rate</span>
+                                </div>
+                                <div class="kpi-value">4.2%</div>
+                                <div class="kpi-details">
+                                    <span>Target: < 3%</span>
+                                    <span class="kpi-trend negative">↑ +1.1%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Revenue Chart -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Total Revenue</h3>
+                                <div class="chart-controls">
+                                    <label><input type="radio" name="group" checked> By Store</label>
+                                    <label><input type="radio" name="group"> By Category</label>
+                                    <button class="btn-icon">📥</button>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder">
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="legend-line actual"></span> Actual</span>
+                                    <span class="legend-item"><span class="legend-line expected"></span> Expected</span>
+                                    <span class="legend-item"><span class="legend-area bounds"></span> Normal Range</span>
+                                </div>
+                                <div class="chart-visualization">
+                                    <svg viewBox="0 0 900 300" class="kpi-chart-svg">
+                                        <!-- Grid and axes -->
+                                        <line x1="50" y1="50" x2="50" y2="250" stroke="#e0e0e0" stroke-width="1"/>
+                                        <line x1="50" y1="250" x2="850" y2="250" stroke="#e0e0e0" stroke-width="1"/>
+                                        
+                                        <!-- Normal range (shaded area) -->
+                                        <polygon points="50,150 850,145 850,200 50,205" fill="#e3f2fd" opacity="0.5"/>
+                                        
+                                        <!-- Expected line -->
+                                        <polyline points="50,175 200,170 350,165 500,160 650,165 800,170 850,175" 
+                                                  fill="none" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="5,5"/>
+                                        
+                                        <!-- Actual line (multiple stores) -->
+                                        <polyline points="50,180 200,175 350,170 500,165 650,170 800,175 850,180" 
+                                                  fill="none" stroke="#2196F3" stroke-width="2"/>
+                                        <polyline points="50,190 200,185 350,180 500,175 650,180 800,185 850,190" 
+                                                  fill="none" stroke="#4CAF50" stroke-width="2"/>
+                                        <polyline points="50,200 200,195 350,190 500,185 650,190 800,195 850,200" 
+                                                  fill="none" stroke="#FF9800" stroke-width="2"/>
+                                        
+                                        <!-- Labels -->
+                                        <text x="25" y="175" font-size="12" fill="#666">$0</text>
+                                        <text x="25" y="100" font-size="12" fill="#666">$10k</text>
+                                        <text x="50" y="270" font-size="12" fill="#666">Jan</text>
+                                        <text x="400" y="270" font-size="12" fill="#666">Jun</text>
+                                        <text x="800" y="270" font-size="12" fill="#666">Dec</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gross Margin Chart -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Gross Margin</h3>
+                                <button class="btn-icon">📥</button>
+                            </div>
+                            <div class="chart-placeholder">
+                                <div class="chart-visualization">
+                                    <svg viewBox="0 0 900 300" class="kpi-chart-svg">
+                                        <line x1="50" y1="50" x2="50" y2="250" stroke="#e0e0e0" stroke-width="1"/>
+                                        <line x1="50" y1="250" x2="850" y2="250" stroke="#e0e0e0" stroke-width="1"/>
+                                        <polygon points="50,100 850,95 850,200 50,205" fill="#e3f2fd" opacity="0.5"/>
+                                        <polyline points="50,150 200,145 350,140 500,135 650,140 800,145 850,150" 
+                                                  fill="none" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="5,5"/>
+                                        <polyline points="50,160 200,155 350,150 500,145 650,150 800,155 850,160" 
+                                                  fill="none" stroke="#2196F3" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stockout Rate Chart -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Stockout Rate</h3>
+                                <button class="btn-icon">📥</button>
+                            </div>
+                            <div class="chart-placeholder">
+                                <div class="chart-visualization">
+                                    <svg viewBox="0 0 900 300" class="kpi-chart-svg">
+                                        <line x1="50" y1="50" x2="50" y2="250" stroke="#e0e0e0" stroke-width="1"/>
+                                        <line x1="50" y1="250" x2="850" y2="250" stroke="#e0e0e0" stroke-width="1"/>
+                                        <!-- Alert threshold line -->
+                                        <line x1="50" y1="200" x2="850" y2="200" stroke="#F44336" stroke-width="2" stroke-dasharray="5,5"/>
+                                        <text x="860" y="205" font-size="12" fill="#F44336">3% Threshold</text>
+                                        <polyline points="50,180 200,175 350,170 500,185 650,190 800,195 850,200" 
+                                                  fill="none" stroke="#2196F3" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Store Performance View -->
+        <section id="store-performance" class="mockup-section">
+            <div class="mockup-header">
+                <h2>Store Performance View</h2>
+                <p>Store-level operational health and performance metrics</p>
+            </div>
+
+            <div class="dashboard-layout">
+                <header class="app-header">
+                    <div class="logo">RetailOps</div>
+                    <div class="header-actions">
+                        <input type="search" placeholder="Search..." class="search-box">
+                        <button class="icon-btn">🔔</button>
+                        <button class="icon-btn">👤</button>
+                    </div>
+                </header>
+
+                <div class="main-content">
+                    <aside class="sidebar">
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item">📊 Dashboard</a>
+                            <a href="#" class="nav-item">📈 KPI Performance</a>
+                            <a href="#" class="nav-item active">🏪 Store Performance</a>
+                            <a href="#" class="nav-item">🔍 Root Cause Analysis</a>
+                            <a href="#" class="nav-item">⚙️ Settings</a>
+                        </nav>
+                    </aside>
+
+                    <main class="dashboard-content">
+                        <!-- Store Selector -->
+                        <div class="store-selector-card">
+                            <label>Select Store</label>
+                            <select class="store-select">
+                                <option>Store 1 - North Region - Supermarket</option>
+                                <option>Store 2 - South Region - Minimart</option>
+                                <option selected>Store 3 - East Region - Wholesale</option>
+                                <option>Store 4 - West Region - Supermarket</option>
+                                <option>Store 5 - Central Region - Minimart</option>
+                            </select>
+                        </div>
+
+                        <!-- Store Info -->
+                        <div class="store-info-card">
+                            <div class="store-header">
+                                <h2>Store 3</h2>
+                                <div class="store-badges">
+                                    <span class="badge region">East Region</span>
+                                    <span class="badge type">Wholesale</span>
+                                </div>
+                            </div>
+                            <div class="store-metrics">
+                                <div class="store-metric">
+                                    <span class="metric-label">Total Revenue</span>
+                                    <span class="metric-value">$456,789.20</span>
+                                    <span class="metric-trend positive">↑ +3.2%</span>
+                                </div>
+                                <div class="store-metric">
+                                    <span class="metric-label">Gross Margin</span>
+                                    <span class="metric-value">31.5%</span>
+                                    <span class="metric-trend negative">↓ -1.5%</span>
+                                </div>
+                                <div class="store-metric">
+                                    <span class="metric-label">Stockout Rate</span>
+                                    <span class="metric-value">5.2%</span>
+                                    <span class="metric-trend negative">↑ +2.1%</span>
+                                </div>
+                                <div class="store-metric">
+                                    <span class="metric-label">Anomalies</span>
+                                    <span class="metric-value">3</span>
+                                    <span class="metric-trend">2 Critical, 1 High</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Anomaly History -->
+                        <div class="chart-card">
+                            <h3>Anomaly History</h3>
+                            <div class="chart-placeholder">
+                                <div class="chart-visualization">
+                                    <svg viewBox="0 0 900 200" class="timeline-svg">
+                                        <rect x="100" y="100" width="60" height="80" fill="#F44336" opacity="0.8"/>
+                                        <rect x="200" y="120" width="40" height="60" fill="#FF9800" opacity="0.8"/>
+                                        <rect x="300" y="80" width="80" height="100" fill="#F44336" opacity="0.8"/>
+                                        <line x1="0" y1="200" x2="900" y2="200" stroke="#ccc" stroke-width="2"/>
+                                        <text x="50" y="220" font-size="12" fill="#666">Jan</text>
+                                        <text x="400" y="220" font-size="12" fill="#666">Jun</text>
+                                        <text x="800" y="220" font-size="12" fill="#666">Dec</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category Performance -->
+                        <div class="category-performance-card">
+                            <h3>Performance by Category</h3>
+                            <table class="category-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Revenue</th>
+                                        <th>Margin</th>
+                                        <th>Stockout Rate</th>
+                                        <th>Anomalies</th>
+                                        <th>Trend</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Category_1</td>
+                                        <td>$123,456.78</td>
+                                        <td>32.1%</td>
+                                        <td>4.2%</td>
+                                        <td><span class="badge critical">2</span></td>
+                                        <td><span class="trend negative">↓</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category_2</td>
+                                        <td>$98,765.43</td>
+                                        <td>30.5%</td>
+                                        <td>3.8%</td>
+                                        <td><span class="badge low">0</span></td>
+                                        <td><span class="trend positive">↑</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category_3</td>
+                                        <td>$87,654.32</td>
+                                        <td>33.2%</td>
+                                        <td>5.1%</td>
+                                        <td><span class="badge high">1</span></td>
+                                        <td><span class="trend neutral">→</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
